@@ -31,11 +31,12 @@ export const GlobalStyle = createGlobalStyle`
 
     body, input, textarea, button {
         font-family: 'Poppins', sans-serif;
-        font-weight: 200;
+        font-weight: 400;
     }
 
     button {
         cursor: pointer;
+        border: none;
     }
 
     [disabled] {
