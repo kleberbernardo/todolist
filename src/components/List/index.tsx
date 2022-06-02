@@ -1,4 +1,4 @@
-import { FaThList } from 'react-icons/fa';
+import { FaList } from 'react-icons/fa';
 
 import { CheckBox, Container, Item, Section } from './styles';
 
@@ -8,30 +8,36 @@ export function List() {
       <Container>
         <Section>
           <header>
-            <FaThList color="#9E73C8" size={30} />
+            <div>
+              <FaList color="#9E6B8E" size={20} />
+            </div>
             <div>To-do List</div>
           </header>
           <main>
             <Item>
-              <CheckBox /> Call the dentist
+              <label>
+                <CheckBox /> Call the dentist
+              </label>
             </Item>
             <Item>
-              <CheckBox /> Call the dentist
+              <label>
+                <CheckBox /> Call the dentist
+              </label>
             </Item>
             <Item>
-              <CheckBox /> Call the dentist
+              <label>
+                <CheckBox /> Call the dentist
+              </label>
             </Item>
             <Item>
-              <CheckBox /> Call the dentist
+              <label>
+                <CheckBox /> Call the dentist
+              </label>
             </Item>
             <Item>
-              <CheckBox /> Call the dentist
-            </Item>
-            <Item>
-              <CheckBox /> Call the dentist
-            </Item>
-            <Item>
-              <CheckBox /> Call the dentist
+              <label>
+                <CheckBox /> Call the dentist
+              </label>
             </Item>
           </main>
           <footer>

@@ -16,29 +16,51 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 1rem 0 1rem;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
 
   header {
-    margin-top: 1rem;
     height: 2rem;
-    padding-left: 1rem;
     display: flex;
 
     div {
-      margin-left: 1rem;
-      font-weight: bold;
-      font-size: 1.25rem;
-      color: var(--primary-color-dark);
+      font-size: 1rem;
+      width: 50%;
+      height: 4rem;
+
+      &:first-child {
+        border-top-left-radius: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &:last-child {
+        background-color: var(--color-gray-200);
+        border-left: 1px solid var(--color-gray-300);
+        border-bottom: 1px solid var(--color-gray-300);
+        color: var(--color-gray-500);
+        border-top-right-radius: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+      }
     }
   }
 
   main {
+    margin: 0 1rem 0 1rem;
     height: 20rem;
-    color: #707070;
+    color: var(--color-gray-900);
+    overflow: auto;
+
+    label {
+      cursor: pointer;
+    }
   }
 
   footer {
+    margin: 0 1rem 0 1rem;
     text-align: center;
     margin-bottom: -2rem;
 
@@ -46,11 +68,16 @@ export const Section = styled.section`
       width: 4rem;
       height: 4rem;
       border-radius: 2rem;
-      background-color: #ffba74;
+      background-color: var(--color-purple-900);
       color: #ffffff;
       font-size: 2rem;
       font-weight: bold;
       box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
+      transition: filter 0.3s;
+    }
+
+    button:hover {
+      filter: brightness(0.9);
     }
   }
 `;
@@ -59,17 +86,17 @@ export const CheckBox = styled.input.attrs({ type: 'checkbox' })`
   width: 1.25rem;
   height: 1.25rem;
   cursor: pointer;
-  accent-color: var(--primary-color-dark);
+  accent-color: var(--color-purple-900);
   vertical-align: middle;
   margin-right: 0.5rem;
 `;
 
 export const Item = styled.div`
-  padding-left: 1rem;
-  margin-top: 0.5rem;
+  padding-left: 0.7rem;
+  margin-top: 1.25rem;
   vertical-align: middle;
 
   &:first-child {
-    margin-top: 0;
+    margin-top: 1.5rem;
   }
 `;
