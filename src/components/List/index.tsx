@@ -1,7 +1,18 @@
 import { useState } from 'react';
 import { FaList } from 'react-icons/fa';
 
-import { CheckBox, Container, Item, Section, Label } from './styles';
+import { ModalAddItemList } from '../Modal/AddItemList';
+import {
+  CheckBox,
+  Container,
+  Item,
+  Section,
+  Label,
+  DivEmpty,
+  Header,
+  Main,
+  Footer,
+} from './styles';
 
 interface IDataItems {
   id: number;
@@ -10,23 +21,7 @@ interface IDataItems {
 }
 
 export function List() {
-  const [items, setItems] = useState<IDataItems[]>([
-    {
-      id: 1,
-      label: 'Item 1',
-      checked: false,
-    },
-    {
-      id: 2,
-      label: 'Item 2',
-      checked: false,
-    },
-    {
-      id: 3,
-      label: 'Item 3',
-      checked: true,
-    },
-  ]);
+  const [items, setItems] = useState<IDataItems[]>([]);
 
   const handleItemChecked = (id: number) => {
     const newItems = items.map((item) => {
@@ -39,31 +34,51 @@ export function List() {
     setItems(newItems);
   };
 
+  const handleNewItem = (item: IDataItems) => {
+    const newItems = [...items, item];
+    setItems(newItems);
+  };
+
+  const [isOpenNewItemModal, setIsOpenNewItemModal] = useState(false);
+  const handleOpenNewItemModal = () => setIsOpenNewItemModal(true);
+  const handleCloseNewItemModal = () => setIsOpenNewItemModal(false);
+
   return (
     <>
       <Container>
         <Section>
-          <header>
+          <Header>
             <div>
               <FaList color="#9E6B8E" size={20} />
             </div>
             <div>To-do List</div>
-          </header>
-          <main>
+          </Header>
+          <Main>
+            <DivEmpty isEmpty={items.length === 0}>Vazio...</DivEmpty>
             {items.map((item) => (
               <Item key={item.id}>
                 <Label isChecked={item.checked}>
-                  <CheckBox onClick={() => handleItemChecked(item.id)} />{' '}
+                  <CheckBox
+                    checked={item.checked}
+                    onClick={() => handleItemChecked(item.id)}
+                  />{' '}
                   {item.label}
                 </Label>
               </Item>
             ))}
-          </main>
-          <footer>
-            <button type="button">+</button>
-          </footer>
+          </Main>
+          <Footer>
+            <button type="button" onClick={handleOpenNewItemModal}>
+              +
+            </button>
+          </Footer>
         </Section>
       </Container>
+      <ModalAddItemList
+        isOpen={isOpenNewItemModal}
+        onSaveItem={handleNewItem}
+        onRequestClose={handleCloseNewItemModal}
+      />
     </>
   );
 }
