@@ -75,6 +75,9 @@ export const Footer = styled.footer`
     font-weight: bold;
     box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
     transition: filter 0.3s;
+    &:focus {
+      outline: none;
+    }
   }
 
   button:hover {
