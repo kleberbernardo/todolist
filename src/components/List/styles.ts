@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const Section = styled.section`
   background-color: #ffffff;
-  width: 18.5rem;
+  width: 22rem;
   height: 28.5rem;
   border-radius: 0.5rem;
   display: flex;
