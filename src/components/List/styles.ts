@@ -100,3 +100,13 @@ export const Item = styled.div`
     margin-top: 1.5rem;
   }
 `;
+
+interface ILabelProps {
+  isChecked: boolean;
+}
+
+export const Label = styled.label<ILabelProps>`
+  text-decoration: ${(props) => (props.isChecked ? 'line-through' : 'none')};
+  color: ${(props) =>
+    props.isChecked ? 'var(--color-gray-500)' : 'var(--color-gray-900)'};
+`;
