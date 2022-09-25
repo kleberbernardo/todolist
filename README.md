@@ -6,7 +6,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/kleberbernardo/README-template?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/kleberbernardo/README-template?style=for-the-badge)
 
-<img src="https://github.com/kleberbernardo/todolist/blob/main/src/ilutration.png" alt="Chathub">
+<img src="https://github.com/kleberbernardo/todolist/blob/main/src/images/ilustration.png" alt="TodoList">
 
 > Esse é um projeto de um Chat, chamado Chathub. Nele você coloca o seu usuário do Github e pode se comunicar em tempo real com outro Chat aberto.
 
